@@ -1,13 +1,20 @@
 x, y = 0, 0
+dx, dy = [1, -1, 0, 0], [0, 0, 1, -1]
+
 for _ in range(int(input())):
     d, n = input().split()
+    n = int(n)
+
     if d == "E":
-        x = x + int(n)
+        dir = 0
     elif d == "W":
-        x = x - int(n)
-    elif d == "S":
-        y = y - int(n)
+        dir = 1
     elif d == "N":
-        y = y + int(n)
+        dir = 2
+    else:
+        dir = 3
+
+    x += dx[dir] * n
+    y += dy[dir] * n
 
 print(x, y)
