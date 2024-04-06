@@ -7,7 +7,7 @@ if n == 3:
         result = max(result, sum(line))
 else:
     for i in range(n):
-        for j in range(n - 3):
+        for j in range(n - 4):
             result = max(result, arr[i][j] + arr[i][j+1] + arr[i][j+2])
 
 print(result)
