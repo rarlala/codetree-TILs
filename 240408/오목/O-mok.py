@@ -53,12 +53,12 @@ for i in range(19):
             for n in range(1, 5):
                 if win != 0:
                     break
-                if i - n < 19 and j - n < 19 and board[i - n][j - n] == current:
+                if i - n < 19 and j - n < 19 and board[i - n][j + n] == current:
                     count += 1
                 else:
                     break
                 if count == 3:
-                    x, y = i - n + 1, j - n + 1
+                    x, y = i - n + 1, j + n + 1
                 if count == 5:
                     win = current
                     break
