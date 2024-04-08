@@ -63,6 +63,9 @@ for i in range(19):
                     win = current
                     break
 
-            
-print(win)
-print(x, y)
+
+if win != 0:
+    print(win)
+    print(x, y)
+else:
+    print(win)
