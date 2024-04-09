@@ -7,8 +7,8 @@ result = 0
 for i in range(n):
     for j in range(n - 2):
         one = arr[i][j] + arr[i][j + 1] + arr[i][j + 2]
-        for k in range(i, n):
-            for l in range(j + 3, n - 2):
+        for k in range(i + n // 3, n):
+            for l in range(j, n - 2):
                 two = arr[k][l] + arr[k][l + 1] + arr[k][l + 2]
                 result = max(result, one + two)
 
