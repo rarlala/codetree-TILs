@@ -14,8 +14,11 @@ for data in arr:
     num_arr[idx - 1] = 1 if alpha == "G" else 2
 
 result = 0
-for i in range(max_num - k):
-    sum_k = sum(num_arr[i:i+k+1])
-    result = max(result, sum_k)
-
+if k < max_num:
+    for i in range(max_num - k):
+        sum_k = sum(num_arr[i:i+k+1])
+        result = max(result, sum_k)
+else:
+    result = sum(num_arr)
+    
 print(result)
