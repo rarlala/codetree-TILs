@@ -1,14 +1,13 @@
 n, k = map(int, input().split())
-arr = [0] * 200
-max_idx = 0
+arr = [0] * 101
+
 for _ in range(n):
-    a, b = map(int, input().split())
-    arr[b] += a
-    max_idx = max(max_idx, a)
+    candy, x = map(int, input().split())
+    arr[x] += candy
 
 result = 0
-for i in range(max_idx):
-    if 0 <= i - k < max_idx and 0 <= i + k < max_idx:
-        result = max(result, sum(arr[i - k : i + k + 1]))
-
+for c in range(100):
+    if 0 <= c - k <= 100 and 0 <= c + k <= 100:
+        result = max(result, sum(arr[c - k : c + k + 1]))
+        
 print(result)
