@@ -8,6 +8,7 @@ for temp in range(2):
     arr = arr if temp == 0 else new_arr
     
     for i in range(n):
+        max_cnt = 0
         cnt = 1
         prev = arr[i][0]
         for j in arr[i]:
@@ -16,7 +17,9 @@ for temp in range(2):
             else:
                 cnt = 1
             prev = j
-        if cnt >= m:
+            max_cnt = max(max_cnt, cnt)
+        if max_cnt >= m:
             result += 1
+            break
 
 print(result)
