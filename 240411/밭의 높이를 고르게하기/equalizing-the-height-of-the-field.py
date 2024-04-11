@@ -4,7 +4,7 @@ arr = list(map(int, input().split()))
 result = 1e9
 for i in range(n - t):
     count = 0
-    for j in arr[i: i + t]:
+    for j in range(i, i + t):
         if arr[j] == h:
             continue
         elif arr[j] > h:
