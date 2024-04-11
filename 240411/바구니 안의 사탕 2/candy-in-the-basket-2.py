@@ -6,7 +6,7 @@ for _ in range(n):
     arr[x] += candy
 
 result = 0
-for c in range(100):
+for i in range(100):
     sum_all = 0
     for j in range(i - k, i + k + 1):
         if j >= 0 and j <= 100:
