@@ -6,14 +6,13 @@ if n == 3:
     for i in arr:
         result += sum(i)
 else:
-    for i in range(n - 3):
-        for j in range(n - 3):
+    for i in range(n - 3 + 1):
+        for j in range(n - 3 + 1):
             sum = 0
             
             for k in range(3):
                 for l in range(3):
                     sum += arr[i+k][j+l]
-        
-    result = max(result, sum)
+            result = max(result, sum)
 
 print(result)
