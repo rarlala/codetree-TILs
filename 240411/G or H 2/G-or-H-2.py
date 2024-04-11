@@ -7,10 +7,10 @@ for _ in range(n):
     max_idx = max(max_idx, int(x))
 
 result = 0
-for i in range(max_idx):
+for i in range(max_idx + 1):
     if arr[i] == 0:
         continue
-    for j in range(max_idx):
+    for j in range(max_idx + 1):
         if arr[j] == 0:
             continue
         
