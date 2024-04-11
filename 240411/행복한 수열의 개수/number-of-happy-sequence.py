@@ -4,8 +4,8 @@ new_arr = list(map(list, zip(*arr)))
 
 result = 0
 
-for temp in range(2):
-    arr = arr if temp == 0 else new_arr
+for _t in range(2):
+    arr = arr if _t == 0 else new_arr
     
     for i in range(n):
         max_cnt = 0
@@ -20,6 +20,5 @@ for temp in range(2):
             max_cnt = max(max_cnt, cnt)
         if max_cnt >= m:
             result += 1
-            break
 
 print(result)
