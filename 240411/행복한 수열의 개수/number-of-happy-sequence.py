@@ -9,7 +9,7 @@ for _t in range(2):
     
     for i in range(n):
         max_cnt = 0
-        cnt = 1
+        cnt = 0
         prev = arr[i][0]
         for j in arr[i]:
             if prev == j:
@@ -18,6 +18,7 @@ for _t in range(2):
                 cnt = 1
             prev = j
             max_cnt = max(max_cnt, cnt)
+
         if max_cnt >= m:
             result += 1
 
