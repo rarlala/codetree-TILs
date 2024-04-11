@@ -7,7 +7,10 @@ for _ in range(n):
 
 result = 0
 for c in range(100):
-    if 0 <= c - k <= 100 and 0 <= c + k <= 100:
-        result = max(result, sum(arr[c - k : c + k + 1]))
+    sum_all = 0
+    for j in range(i - k, i + k + 1):
+        if j >= 0 and j <= 100:
+            sum_all += arr[i]
+    result = max(result, sum_all)
         
 print(result)
