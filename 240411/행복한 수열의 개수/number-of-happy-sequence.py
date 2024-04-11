@@ -5,7 +5,7 @@ new_arr = list(map(list, zip(*arr)))
 result = 0
 
 for temp in range(2):
-    arr = arr if temp == 1 else new_arr
+    arr = arr if temp == 0 else new_arr
     
     for i in range(n):
         cnt = 1
