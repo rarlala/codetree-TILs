@@ -7,7 +7,9 @@ while len(arr) != 1:
     a = arr.pop(0)
     b = arr.pop(0)
 
-    arr.append(a + b)
-    result += a + b
+    value = a + b
+    result += value
+    arr.append(value)
+    arr.sort()
 
 print(result)
