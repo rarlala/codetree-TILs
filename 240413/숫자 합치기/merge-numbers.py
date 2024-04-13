@@ -4,12 +4,10 @@ arr.sort()
 
 result = 0
 while len(arr) != 1:
-    value = 0
-    for i in range(2):
-        a = arr.index(min(arr))
-        value += arr.pop(a)
+    a = arr.pop(0)
+    b = arr.pop(0)
 
-    arr.append(value)
-    result += value
+    arr.append(a + b)
+    result += a + b
 
 print(result)
