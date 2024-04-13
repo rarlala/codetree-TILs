@@ -1,15 +1,20 @@
+import heapq
+
 n = int(input())
 arr = list(map(int, input().split()))
-arr.sort()
 
+heap = []
 result = 0
-while len(arr) != 1:
-    a = arr.pop(0)
-    b = arr.pop(0)
+
+for elem in arr:
+    heapq.heappush(heap, elem)
+
+while len(heap) > 1:
+    a = heapq.heappop(heap)
+    b = heapq.heappop(heap)
 
     value = a + b
     result += value
-    arr.append(value)
-    arr.sort()
+    heapq.heappush(heap, value)
 
 print(result)
