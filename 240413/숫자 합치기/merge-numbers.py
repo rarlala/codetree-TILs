@@ -1,15 +1,15 @@
 n = int(input())
 arr = list(map(int, input().split()))
-arr.sort(reverse = True)
+arr.sort()
 
 result = 0
 while len(arr) != 1:
-    a = arr.pop()
-    b = arr.pop()
+    value = 0
+    for i in range(2):
+        a = arr.index(min(arr))
+        value += arr.pop(a)
 
-    value = a + b 
     arr.append(value)
-    arr.sort(reverse = True)
     result += value
 
 print(result)
