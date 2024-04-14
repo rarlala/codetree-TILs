@@ -9,7 +9,9 @@ for i in range(2 * n, 1, -1):
 
 result = 0
 for j in range(n):
-    if b[j] < a[0]:
-        result = n - j + 1
+    for k in range(n):
+        if b[j] < a[k]:
+            result += 1
+            break
 
 print(result)
