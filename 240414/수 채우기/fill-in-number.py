@@ -1,14 +1,12 @@
 n = int(input())
-arr = [1e9] * (n + 1)
-if n >= 2:
-    arr[2] = 1
-if n >= 5:
-    arr[5] = 1
+ans = 1e9
 
-for i in range(1, n + 1):
-    if n >= 2:
-        arr[i] = min(arr[i - 2] + 1, arr[i])
-    if n >= 5:
-         arr[i] = min(arr[i - 5] + 1, arr[i])
+for i in range(0, n):
+    remainder = n - (5 * i)
+    if remainder >= 0 and remainder % 2 == 0:
+        ans = min(ans, i + (remainder // 2))
 
-print(-1 if arr[n] == 1e9 else arr[n])
+if ans == 1e9:
+    ans = -1
+
+print(ans)
