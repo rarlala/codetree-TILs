@@ -1,9 +1,10 @@
 n = int(input())
+arr = [1e9] * (n + 1)
+arr[2] = 1
+arr[5] = 1
 
-result = 0
-for i in [5, 2]:
-    num = n // i
-    n -= (num * i)
-    result += num
+for i in range(1, n + 1):
+    arr[i] = min(arr[i - 2] + 1, arr[i])
+    arr[i] = min(arr[i - 5] + 1, arr[i])
 
-print(result if n == 0 else -1)
+print(arr[n])
