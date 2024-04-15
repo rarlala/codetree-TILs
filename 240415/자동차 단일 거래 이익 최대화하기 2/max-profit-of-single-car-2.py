@@ -2,8 +2,9 @@ n = int(input())
 arr = list(map(int, input().split()))
 result = 0
 
+min_v = 100000
 for i in range(n):
-    for j in range(i + 1, n):
-        result = max(result, arr[j] - arr[i])
+    min_v = min(min_v, arr[i])
+    result = max(result, arr[i] - min_v)
 
 print(result)
