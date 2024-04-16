@@ -1,19 +1,34 @@
+import heapq
+
+MAX_T = 10000
+
 n = int(input())
-arr = [list(map(int, input().split())) for _ in range(n)]
-arr.sort(key=lambda x: (x[1], -x[0]))
+bombs = []
 
-result = 0
-cur_time = 0
-min_value = 1e9
+for _ in range(n):
+    p, t = tuple(map(int, input().split()))
+    bombs.append((t, p))
 
-for p, t in arr:
-    if cur_time < t:
-        cur_time += 1
-        result += p
-        min_value = min(min_value, p)
-    elif min_value < p and cur_time - 1 < t:
-        result -= min_value
-        result += p
-        min_value = p
+def get_time_limit(bomb_idx):
+    time_limit, _ = bombs[bomb_idx]
+    return time_limit
 
-print(result)
+def get_score(bomb_idx):
+    _, score = bombs[bomb_idx]
+    return score
+
+bombs.sort()
+
+pq = []
+bomb_idx = n - 1
+ans = 0
+
+for time in range(MAX_T, 0, -1):
+    while bomb_idx >= 0 and get_time_limit(bomb_idx) >= time:
+        heapq.heappush(pq, -get_score(bomb_idx))
+        bomb_idx -= 1
+    
+    if pq:
+        ans += -heapq.heappop(pq)
+
+print(ans)
