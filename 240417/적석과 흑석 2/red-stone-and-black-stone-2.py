@@ -17,7 +17,7 @@ result = 0
 while c_idx < c and n_idx < n:
     a, b = n_arr[n_idx]
     t = c_arr[c_idx]
-    
+
     if a <= t <= b:
         result += 1
         c_idx += 1
@@ -26,7 +26,7 @@ while c_idx < c and n_idx < n:
     elif a > t:
         c_idx += 1
     
-    elif t > c:
+    elif t > b:
         n_idx += 1
     
 print(result)
