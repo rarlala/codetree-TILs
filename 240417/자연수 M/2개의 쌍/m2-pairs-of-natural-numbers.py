@@ -10,10 +10,13 @@ for _ in range(n):
 arr.sort()
 ans = 1e9
 
-for i in range(n // 2):
-    a = arr.pop()
-    b = arr.pop(0)
+f_idx = 0
+e_idx = n
 
-    ans = min(ans, a + b)
+for i in range(n // 2):
+    if f_idx != e_idx:
+        ans = min(ans, arr[f_idx] + arr[e_idx])
+        f_idx += 1
+        e_idx += 1
 
 print(ans)
