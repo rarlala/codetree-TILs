@@ -1,23 +1,28 @@
 n = int(input())
-arr = []
+ans = 0
 
+nums = []
 for _ in range(n):
     x, y = tuple(map(int, input().split()))
+    nums.append((y, x))
 
-    for _ in range(x):
-        arr.append(y)
+nums.sort()
 
-arr.sort()
-ans = 1e9
+li, ri = 0, n - 1
+while li <= ri:
+    ly, lx = nums[li]
+    ry, rx = nums[ri]
 
-f_idx = 0
-e_idx = n
+    ans = max(ans, ly + ry)
 
-for i in range(n // 2):
-    f_idx += 1
-    e_idx -= 1
-
-    if f_idx != e_idx and ans > arr[f_idx] + arr[e_idx]:
-        ans = arr[f_idx] + arr[e_idx]
-        
+    if lx < rx:
+        nums[ri] = (ry, rx - lx)
+        li += 1
+    elif lx > rx:
+        nums[li] = (ly, lx - rx)
+        ri -= 1
+    else:
+        li += 1
+        ri -= 1
+    
 print(ans)
