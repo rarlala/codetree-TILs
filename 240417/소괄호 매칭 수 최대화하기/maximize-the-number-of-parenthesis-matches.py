@@ -1,23 +1,25 @@
 n = int(input())
 arr = []
+num_arr = []
 
 for _ in range(n):
     data = list(input())
     l = data.count("(")
     r = data.count(")")
     arr.append((l, r, data))
-
 arr.sort(key=lambda x: (-x[0], x[1]))
 
-str_arr = []
-for data in arr:
-    for j in data[2]:
-        str_arr.append(j)
+num = 0
+for i in arr:
+    for j in i[2]:
+        if j == "(":
+            num_arr.append(1)
+        else:
+            num_arr.append(0)
 
 score = 0
-for i in range(len(str_arr)):
-    for j in range(i + 1, len(str_arr)):
-        if str_arr[i] == "(" and str_arr[j] == ")":
-            score += 1
+for i in range(len(num_arr) - 1):
+    if num_arr[i] == 1:
+        score += num_arr[i+1:len(num_arr)].count(0)
 
 print(score)
