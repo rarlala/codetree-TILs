@@ -14,9 +14,10 @@ f_idx = 0
 e_idx = n
 
 for i in range(n // 2):
-    if f_idx != e_idx:
-        ans = min(ans, arr[f_idx] + arr[e_idx])
-        f_idx += 1
-        e_idx += 1
+    f_idx += 1
+    e_idx -= 1
 
+    if f_idx != e_idx and ans > arr[f_idx] + arr[e_idx]:
+        ans = arr[f_idx] + arr[e_idx]
+        
 print(ans)
