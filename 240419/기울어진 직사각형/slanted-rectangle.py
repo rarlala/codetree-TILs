@@ -20,7 +20,7 @@ for i in range(n - 1, 0, -1):
 
             if nx == i and ny == j:
                 break
-            elif 0 <= nx < n and 0 <= ny < n:
+            elif (nx, ny) not in [(0, 0), (n, 0), (0, n), (n, n)] and 0 <= nx < n and 0 <= ny < n:
                 cur_sum += arr[nx][ny]
                 x, y = nx, ny
                 cnt += 1
