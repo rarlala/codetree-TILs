@@ -1,7 +1,8 @@
+import sys
 n = int(input())
 arr = [list(map(int, input().split())) for _ in range(n)]
 
-min_result = 1e9
+min_result = sys.maxsize
 for i in range(n):
     result = 0
     xs = []
