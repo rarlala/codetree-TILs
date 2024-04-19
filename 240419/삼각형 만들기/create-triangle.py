@@ -12,8 +12,8 @@ for i in range(n):
             x3, y3 = arr[k]
 
             if (x1 == x2 or x1 == x3 or x2 == x3) and (y1 == y2 or y1 == y3 or y2 == y3):
-                result = abs(((x1 * y2) + (x2 * y3) + (x3 * y1)) - ((x2 * y1) + (x3 * y2) + (x1 * y3))) // 2
+                result = abs(((x1 * y2) + (x2 * y3) + (x3 * y1)) - ((x2 * y1) + (x3 * y2) + (x1 * y3)))
 
             max_result = max(max_result, result)
 
-print(max_result * 2)
+print(max_result)
