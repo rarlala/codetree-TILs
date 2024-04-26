@@ -1,36 +1,17 @@
 n = int(input())
-arr = [] 
-max_num = 0
+arr = [list(map(int, input().split())) for _ in range(n)]
+max_time = 0
 
-for _ in range(n):
-    a, b = map(int, input().split())
-    max_num = max(max_num, b)
-    arr.append((a, b))
+for i in range(n):    
+    time = set()
 
-time = [0] * (max_num + 1)
+    for j in range(n):
+        if i == j:
+            continue
+  
+        for t in range(arr[j][0], arr[j][1]):
+            time.add(t)
+     
+    max_time = max(len(time), max_time)
 
-for a, b in arr:
-    for t in range(a, b):
-        time[t] += 1
-
-idx = 0
-max_count = 0
-
-for i in range(n):
-    a, b = arr[i]
-    count = 0
-    for t in range(a, b):
-        if time[t] > 1:
-            count += 1
-    if max_count < count:
-        max_count = count
-        idx = i
-
-for t in range(arr[idx][0], arr[idx][1]):
-    time[t] -= 1
-
-result = 0
-for i in time:
-    if i > 0:
-        result += 1
-print(result)
+print(max_time)
