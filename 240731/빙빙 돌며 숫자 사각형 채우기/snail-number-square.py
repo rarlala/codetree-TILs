@@ -13,12 +13,12 @@ for _ in range(n * m):
     
     nx, ny = x + dx[dr], y + dy[dr]
 
-    if 0 <= nx < n and 0 <= ny < m and arr[nx][ny] == 0:
+    if 0 <= nx < m and 0 <= ny < n and arr[nx][ny] == 0:
         x, y = nx, ny
     else:
         dr = (dr + 1) % 4
         nx, ny = x + dx[dr], y + dy[dr]
-        if 0 <= nx < n and 0 <= ny < m and arr[nx][ny] == 0:
+        if 0 <= nx < m and 0 <= ny < n and arr[nx][ny] == 0:
             x, y = x + dx[dr], y + dy[dr]
         
 for i in arr:
