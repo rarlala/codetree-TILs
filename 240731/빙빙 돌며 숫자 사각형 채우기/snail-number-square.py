@@ -1,5 +1,5 @@
 n, m = list(map(int, input().split()))
-arr = [[0] * n for _ in range(m)]
+arr = [[0] * m for _ in range(n)]
 
 num = 1
 dr = 0
