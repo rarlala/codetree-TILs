@@ -34,23 +34,23 @@ check = True
 while check:
     count += 1
     # /
-    # 북쪽 -> 서쪽
-    # 서쪽 -> 북쪽
-    # 동쪽 -> 남쪽
-    # 남쪽 -> 동쪽
+    # 북쪽 -> 동쪽
+    # 서쪽 -> 남쪽
+    # 동쪽 -> 북쪽
+    # 남쪽 -> 서쪽
     if arr[x][y] == '/':
-        if dir_num == 0: # 북
-            x, y = x + dx[3], y + dy[3]
-            dir_num = 3
-        elif dir_num == 1: # 동
-            x, y = x + dx[2], y + dy[2]
-            dir_num = 2
-        elif dir_num == 2: # 남
+        if dir_num == 0: # 북 -> 동
             x, y = x + dx[1], y + dy[1]
             dir_num = 1
-        else: # 서
+        elif dir_num == 1: # 동 -> 북
             x, y = x + dx[0], y + dy[0]
             dir_num = 0
+        elif dir_num == 2: # 남 -> 서
+            x, y = x + dx[3], y + dy[3]
+            dir_num = 3
+        else: # 서 -> 남
+            x, y = x + dx[2], y + dy[2]
+            dir_num = 2
     # \
     # 북쪽 -> 서쪽
     # 동쪽 -> 남쪽
