@@ -1,11 +1,10 @@
 n, m = list(map(int, input().split()))
-arr = [[0] * n for i in range(n)]
+arr = [[0] * (n + 1) for i in range(n + 1)]
 
 dxs, dys = [0,0,1,-1], [1,1,0,0]
 
 for _ in range(m):
     x, y = list(map(int, input().split()))
-    x, y = x - 1, y - 1
     arr[x][y] = 1
 
     count = 0
