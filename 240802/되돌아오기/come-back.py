@@ -20,12 +20,8 @@ for i in range(1, int(input()) + 1):
         x, y = x + dx[dir_num], y + dy[dir_num]
         time += 1
 
-        if x == 0 and y == 0:
+        if x == 0 and y == 0 and result == -1:
             result = time
-            break
-        
-        if result != -1:
-            break
         
 
 print(result)
