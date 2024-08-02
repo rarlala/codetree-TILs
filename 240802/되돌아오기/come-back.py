@@ -24,5 +24,8 @@ for i in range(1, int(input()) + 1):
             result = time
             break
         
+        if result != -1:
+            break
+        
 
 print(result)
