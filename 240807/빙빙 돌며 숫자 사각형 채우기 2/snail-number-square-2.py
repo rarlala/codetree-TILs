@@ -11,14 +11,8 @@ for i in range(1, n * m + 1):
     nx = x + dx[dir]
     ny = y + dy[dir]
 
-    if 0 <= nx < n and 0 <= ny < m:
-        if arr[nx][ny] == 0:
-            x, y = nx, ny
-        else:
-            dir = (dir + 1) % 4
-            nx = x + dx[dir]
-            ny = y + dy[dir]
-            x, y = nx, ny
+    if 0 <= nx < n and 0 <= ny < m and arr[nx][ny] == 0:
+        x, y = nx, ny
     else:
         dir = (dir + 1) % 4
         nx = x + dx[dir]
